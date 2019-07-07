@@ -1,3 +1,6 @@
 server <- function(input, output) {
-  xxx
+  # Render Map with the data points
+  output$kartenoutput <- renderLeaflet({
+    leaflet()%>%addTiles()%>%addCircles(data$longitude, data$latitude)
+  })
 }
